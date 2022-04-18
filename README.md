@@ -1,5 +1,5 @@
 # FGO-servant-Java
-A Java app to see inforpmation on the game Fate/Grand Order
+A Java app to search some information on the game Fate/Grand Order
 
 ## Description of the project
 
