@@ -2,7 +2,6 @@
     <string name="app_name">FGO Ressource</string>
     <string name="jp">JP</string>
     <string name="na">NA</string>
-    <string name="search">Search</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
     <string name="_3">3</string>
@@ -13,11 +12,27 @@
     <string name="passive_skills">Passive Skills</string>
     <string name="np">NP</string>
     <string name="cards">Cards</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="traits_tab">Traits tab</string>
     <string name="np_tab">NP tab</string>
     <string name="skills_tab">Skills tab</string>
     <string name="passive_skills_tab">Passive skills tab</string>
     <string name="cards_tab">Cards tab</string>
+    <string name="_5">5</string>
+    <string name="shielder">Shielder</string>
+    <string name="foreigner">Foreigner</string>
+    <string name="alter_ego">Alter Ego</string>
+    <string name="berserker">Berserker</string>
+    <string name="moon_cancer">Moon Cancer</string>
+    <string name="avenger">Avenger</string>
+    <string name="ruler">Ruler</string>
+    <string name="rider">Rider</string>
+    <string name="caster">Caster</string>
+    <string name="assassin">Assassin</string>
+    <string name="lancer">Lancer</string>
+    <string name="archer">Archer</string>
+    <string name="saber">Saber</string>
+    <string name="servant_class">Class:</string>
+    <string name="rarity">Rarity:</string>
+    <string name="open_filter">↓</string>
 </resources>
