@@ -83,13 +83,6 @@ public class NAServantDetailled extends AppCompatActivity {
         _id = servant.getString("ID");
         Log.d("Servant ID", _id);
 
-        tabLayout.setupWithViewPager(viewPager);
-        vpAdapter.addFragment(new FragmentTraits(), "Traits");
-        vpAdapter.addFragment(new FragmentSkills(), "Skills");
-        vpAdapter.addFragment(new FragmentPassive(), "Passive skills");
-        vpAdapter.addFragment(new FragmentNP(), "NP");
-        vpAdapter.addFragment(new FragmentCards(), "Cards");
-        viewPager.setAdapter(vpAdapter);
 
         DetailledViewModel model = new ViewModelProvider(this, new DetailledViewModelFactory(_id)).get(DetailledViewModel.class);
         model.getList().observe(this, servMLD -> {
@@ -164,6 +157,16 @@ public class NAServantDetailled extends AppCompatActivity {
                         setGraph(_graphURLChange);
                     }
                 });
+
+
+                tabLayout.setupWithViewPager(viewPager);
+                vpAdapter.addFragment(new FragmentTraits(servMLD.getJSONArray("traits")), "Traits");
+                vpAdapter.addFragment(new FragmentSkills(), "Skills");
+                vpAdapter.addFragment(new FragmentPassive(), "Passive skills");
+                vpAdapter.addFragment(new FragmentNP(), "NP");
+                vpAdapter.addFragment(new FragmentCards(), "Cards");
+                viewPager.setAdapter(vpAdapter);
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

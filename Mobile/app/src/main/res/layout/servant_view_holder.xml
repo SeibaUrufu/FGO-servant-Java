@@ -24,7 +24,17 @@
         android:id="@+id/servantID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/servantName" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="#"
+        app:layout_constraintStart_toEndOf="@+id/servantSprite"
+        app:layout_constraintTop_toBottomOf="@+id/servantName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

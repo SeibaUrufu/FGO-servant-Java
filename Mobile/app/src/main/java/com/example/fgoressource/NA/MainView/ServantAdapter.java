@@ -5,6 +5,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +21,8 @@ import com.example.fgoressource.VolleyRequestQueue;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.List;
 
 public class ServantAdapter extends RecyclerView.Adapter<ServantViewHolder> {
 
@@ -75,5 +79,4 @@ public class ServantAdapter extends RecyclerView.Adapter<ServantViewHolder> {
     public void setOnItemClickListener(IServant itemClickListener) {
         this.clickListener = itemClickListener;
     }
-
 }
