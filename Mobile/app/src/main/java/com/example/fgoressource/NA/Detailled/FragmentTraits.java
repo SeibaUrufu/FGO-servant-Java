@@ -23,7 +23,6 @@ public class FragmentTraits extends Fragment {
     public FragmentTraits(JSONArray traits) {
         super(R.layout.fragment_traits);
         array = traits;
-        Log.d("TraitsList", String.valueOf(array));
     }
 
     @Override

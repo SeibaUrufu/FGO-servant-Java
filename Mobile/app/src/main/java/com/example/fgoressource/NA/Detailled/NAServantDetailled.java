@@ -162,7 +162,7 @@ public class NAServantDetailled extends AppCompatActivity {
                 tabLayout.setupWithViewPager(viewPager);
                 vpAdapter.addFragment(new FragmentTraits(servMLD.getJSONArray("traits")), "Traits");
                 vpAdapter.addFragment(new FragmentSkills(), "Skills");
-                vpAdapter.addFragment(new FragmentPassive(), "Passive skills");
+                vpAdapter.addFragment(new FragmentPassive(servMLD.getJSONArray("classPassive")), "Passive skills");
                 vpAdapter.addFragment(new FragmentNP(), "NP");
                 vpAdapter.addFragment(new FragmentCards(), "Cards");
                 viewPager.setAdapter(vpAdapter);
