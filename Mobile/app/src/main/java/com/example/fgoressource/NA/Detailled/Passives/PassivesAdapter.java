@@ -52,12 +52,11 @@ public class PassivesAdapter extends RecyclerView.Adapter<PassivesViewHolder> {
     public void effectFormat(int size, JSONObject list, PassivesViewHolder holder) {
         try {
             if(1 == size) {
-                //Log.d("Passive1", String.valueOf(list.getJSONArray("functions")));
-                holder.getPassiveValue().setText(String.format(" %s", formatValue(list.getJSONArray("functions").getJSONObject(0))));
+                holder.getPassiveValue().setText(String.format(" %s: %s", list.getJSONArray("functions").getJSONObject(0).getString("funcPopupText").replaceAll("\\R", " ") , formatValue(list.getJSONArray("functions").getJSONObject(0))));
             } else if(2 == size) {
-                holder.getPassiveValue().setText(String.format(" %s and %s", formatValue(list.getJSONArray("functions").getJSONObject(0)), formatValue(list.getJSONArray("functions").getJSONObject(1))));
+                holder.getPassiveValue().setText(String.format(" %s: %s and %s: %s",list.getJSONArray("functions").getJSONObject(0).getString("funcPopupText").replaceAll("\\R", " "), formatValue(list.getJSONArray("functions").getJSONObject(0)), list.getJSONArray("functions").getJSONObject(1).getString("funcPopupText").replaceAll("\\R", " "), formatValue(list.getJSONArray("functions").getJSONObject(1))));
             } else if(3 <= size) {
-                holder.getPassiveValue().setText(String.format(" %s, %s and %s", formatValue(list.getJSONArray("functions").getJSONObject(0)), formatValue(list.getJSONArray("functions").getJSONObject(1)), formatValue(list.getJSONArray("functions").getJSONObject(2))));
+                holder.getPassiveValue().setText(String.format(" %s: %s, %s: %s and %s: %s", list.getJSONArray("functions").getJSONObject(0).getString("funcPopupText").replaceAll("\\R", " "), formatValue(list.getJSONArray("functions").getJSONObject(0)), list.getJSONArray("functions").getJSONObject(1).getString("funcPopupText").replaceAll("\\R", " "), formatValue(list.getJSONArray("functions").getJSONObject(1)), list.getJSONArray("functions").getJSONObject(2).getString("funcPopupText").replaceAll("\\R", " "), formatValue(list.getJSONArray("functions").getJSONObject(2))));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -67,26 +66,6 @@ public class PassivesAdapter extends RecyclerView.Adapter<PassivesViewHolder> {
     public String formatValue(JSONObject json) {
         String result = "";
         try {
-            /*Log.d("Passive", String.valueOf(json));
-            if(json.getString("funcPopupText").matches("(?i)(.*)Immune|Nega-Saver(.*)")) {
-                result = "Infinite";
-                return result;
-            } else if (json.getString("funcPopupText").matches("(?i)(.*)None(.*)")) {
-                result = "No effect";
-                return result;
-            } else if (json.getString("funcPopupText").matches("(?i)(.*)Bonus Effect(.*)")) {
-                result = String.format("%s%%", json.getJSONArray("svals").getJSONObject(0).getInt("UseRate")/10);
-                return result;
-            } else if (json.getString("funcPopupText").matches("(?i)(.*)Down|(.*)Up|(.*)Resist|(.*)Corroding|(.*)NP Gain(.*)")) {
-                result = String.format("%s%%", json.getJSONArray("svals").getJSONObject(0).getInt("Value")/10);
-                return result;
-            } else if (json.getString("funcPopupText").matches("(?i)(.*)Debuff(.*)")) {
-                result = String.format("%s%%", json.getJSONArray("svals").getJSONObject(0).getInt("Value")/10);
-                return result;
-            } else {
-                result = String.valueOf(json.getJSONArray("svals").getJSONObject(0).getInt("Value"));
-                return result;
-            }*/
             String type = json.getString("funcPopupText");
 
             Pattern _percentage = Pattern.compile("(?i)(.*)Down|(.*)Up|(.*)Resist|(.*)Corroding|(.*)NP Gain|(.*)C\\. Star\nDrop Rate|(.*)Critical(.*)");
