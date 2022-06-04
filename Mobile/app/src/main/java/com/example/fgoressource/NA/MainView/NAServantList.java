@@ -25,16 +25,19 @@ public class NAServantList extends AppCompatActivity implements IServant{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.servant_list);
 
-        Button options = (Button) findViewById(R.id.searchNameButton);
-        FragmentContainerView optionsContainer = (FragmentContainerView) findViewById(R.id.optionsFragContainer);
+        //Declaration of a Button and a FragmentContainerView to filter the list
+        Button options = findViewById(R.id.searchNameButton);
+        FragmentContainerView optionsContainer = findViewById(R.id.optionsFragContainer);
 
         VolleyRequestQueue.getInstance(this);
 
+        //Creation of the ViewModel
         ServantViewModel model = new ViewModelProvider(this).get(ServantViewModel.class);
 
+        //Observer on the ViewModel
         model.getList().observe(this, servMLD -> {
             LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-            RecyclerView _recyclerView = (RecyclerView) findViewById(R.id.servantRecycler);
+            RecyclerView _recyclerView = findViewById(R.id.servantRecycler);
             ServantAdapter _adapter = new ServantAdapter(servMLD);
             _adapter.getItemCount();
 
@@ -43,14 +46,15 @@ public class NAServantList extends AppCompatActivity implements IServant{
             _adapter.setOnItemClickListener(this);
         });
 
+        //Reaction on the filter button
         options.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(optionsOn) {
+                if(optionsOn) { //If the filter section is open, we change the value to false, change the text and make it invisible
                     optionsOn = false;
                     options.setText("↓");
                     optionsContainer.setVisibility(View.INVISIBLE);
-                } else {
+                } else { //Else we change the value to false, change the text and get the fragment to be shown
                     optionsOn = true;
                     optionsContainer.setVisibility(View.VISIBLE);
                     options.setText("↑");
@@ -70,9 +74,9 @@ public class NAServantList extends AppCompatActivity implements IServant{
     @Override
     public void onClick(ServantViewHolder holder, int position) {
         String _id = holder.getID().getText().toString();
-        Intent servant = new Intent(NAServantList.this, NAServantDetailled.class);
+        Intent servant = new Intent(NAServantList.this, NAServantDetailled.class); //Intent to pass some data to the next activity
         servant.putExtra("ID", _id);
-        startActivity(servant);
+        startActivity(servant); //Will direct us to the activity showing detailed information on the servant
     }
 
 }

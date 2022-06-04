@@ -201,6 +201,7 @@ public class NAServantDetailled extends AppCompatActivity {
                 skills.put("skill3", skill_3);
 
                 Log.d("Skills", String.valueOf(skills));
+                Log.d("Skill1", String.valueOf(servMLD.getJSONArray("skills").getJSONObject(0)));
 
 
                 tabLayout.setupWithViewPager(viewPager);

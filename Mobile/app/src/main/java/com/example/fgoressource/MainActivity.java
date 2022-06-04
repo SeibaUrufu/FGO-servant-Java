@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         VolleyRequestQueue.getInstance(this);
@@ -26,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
         global.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //We create an intent to go to the next Activity
                 Intent na = new Intent(MainActivity.this, NAServantList.class);
 
+                //Try/catch just in case
                 try {
                     startActivity(na);
                 } catch (ActivityNotFoundException e) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
         japan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //Toast to inform it's not created yet
                 Toast.makeText(MainActivity.this,"WIP", Toast.LENGTH_SHORT).show();
             }
         });

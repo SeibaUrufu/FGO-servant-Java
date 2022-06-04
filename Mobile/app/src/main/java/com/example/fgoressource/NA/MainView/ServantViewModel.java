@@ -1,8 +1,6 @@
 package com.example.fgoressource.NA.MainView;
 
 import android.app.Application;
-import android.util.Log;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
@@ -14,16 +12,15 @@ import org.json.JSONArray;
 
 public class ServantViewModel extends AndroidViewModel {
 
-    private final NARepository _repository;
     private final MutableLiveData<JSONArray> servMLD;
 
     public ServantViewModel(@NonNull Application application) {
         super(application);
-        _repository = new NARepository();
+        NARepository _repository = new NARepository();
         servMLD = new MutableLiveData<>();
-        _repository.searchServants(servMLD);
+        _repository.searchServants(servMLD); //We call the function searchServants from the repository., it will fill the LiveData with small info on all the servant
     }
 
-    public LiveData<JSONArray> getList() {return servMLD;}
+    public LiveData<JSONArray> getList() {return servMLD;} //Will return to the activity a JSONArray with all the servant in it
 
 }

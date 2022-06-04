@@ -18,9 +18,9 @@ public class ServantViewHolder extends RecyclerView.ViewHolder implements View.O
 
     public ServantViewHolder(@NonNull View itemView, IServant clickListener) {
         super(itemView);
-        servName = (TextView) itemView.findViewById(R.id.servantName);
-        servID = (TextView) itemView.findViewById(R.id.servantID);
-        servFace = (ImageView) itemView.findViewById(R.id.servantSprite);
+        servName = itemView.findViewById(R.id.servantName);
+        servID = itemView.findViewById(R.id.servantID);
+        servFace = itemView.findViewById(R.id.servantSprite);
         itemView.setOnClickListener(this);
         this.clickListener=clickListener;
     }

@@ -5,8 +5,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -22,7 +20,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.List;
 
 public class ServantAdapter extends RecyclerView.Adapter<ServantViewHolder> {
 
@@ -42,16 +39,16 @@ public class ServantAdapter extends RecyclerView.Adapter<ServantViewHolder> {
     public void onBindViewHolder(@NonNull ServantViewHolder holder, int position) {
 
         try {
-            JSONObject _servantData = _servantList.getJSONObject(position);
-            String _urlFace = _servantData.getString("face");
-            holder.getName().setText(_servantData.getString("name"));
-            holder.getID().setText(_servantData.getString("collectionNo"));
+            JSONObject _servantData = _servantList.getJSONObject(position); //It will go through the JSON, and select the data at the position element. Shortcut to not have to write everything, each time.
+            String _urlFace = _servantData.getString("face"); //Small shortcut
+            holder.getName().setText(_servantData.getString("name")); //Write the servant name
+            holder.getID().setText(_servantData.getString("collectionNo")); //Write the servant collectionNp
 
             ImageRequest _request = new ImageRequest(_urlFace, new Response.Listener<Bitmap>() {
 
                 @Override
                 public void onResponse(Bitmap response) {
-                    holder.getFace().setImageBitmap(response);
+                    holder.getFace().setImageBitmap(response); //Show the servant face
                 }
             }, 0, 0, ImageView.ScaleType.CENTER, Bitmap.Config.RGB_565, new Response.ErrorListener() {
                 @Override
@@ -70,11 +67,11 @@ public class ServantAdapter extends RecyclerView.Adapter<ServantViewHolder> {
     @Override
     public int getItemCount() {
         return _servantList.length();
-    }
+    } //Return the number of element -1 of the JSON
 
     public ServantAdapter(@NonNull JSONArray servList) {
         _servantList = servList;
-    }
+    } //Constructor
 
     public void setOnItemClickListener(IServant itemClickListener) {
         this.clickListener = itemClickListener;
