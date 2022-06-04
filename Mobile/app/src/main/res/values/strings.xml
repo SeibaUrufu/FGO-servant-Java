@@ -35,4 +35,12 @@
     <string name="servant_class">Class:</string>
     <string name="rarity">Rarity:</string>
     <string name="open_filter">↓</string>
+    <string name="_0">0</string>
+    <string name="filter_servant">Filter Servant</string>
+    <string name="skill_1">Skill 1</string>
+    <string name="skill_2">Skill 2</string>
+    <string name="skill_3">Skill 3</string>
+    <string name="effect_level">Effect \\ Level</string>
+    <string name="skill_description">Skill Description</string>
+    <string name="skill_name">Skill Name</string>
 </resources>

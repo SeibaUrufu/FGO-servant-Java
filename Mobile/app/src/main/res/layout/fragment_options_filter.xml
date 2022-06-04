@@ -24,6 +24,14 @@
                 android:text="@string/rarity" />
 
             <CheckBox
+                android:id="@+id/rarity0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/_0"
+                android:visibility="gone" />
+
+            <CheckBox
                 android:id="@+id/rarity1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -206,7 +214,7 @@
             android:id="@+id/filterButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Filter Servant" />
+            android:text="@string/filter_servant" />
 
     </LinearLayout>
 

@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/drawable/arts.xml" value="0.1945" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/drawable/buster.xml" value="0.2" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/drawable/extra.xml" value="0.1945" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/drawable/quick.xml" value="0.1945" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/activity_main.xml" value="0.2128623188405797" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/buster_card.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/cards.xml" value="0.2210144927536232" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/fragment_cards.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/fragment_n_p.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/fragment_options_filter.xml" value="0.21041666666666667" />
@@ -14,6 +20,8 @@
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/servant_detailled_na.xml" value="0.3346354166666667" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/servant_list.xml" value="0.40634005763688763" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/servant_view_holder.xml" value="0.72" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/skill_value.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/skills_test_format.xml" value="0.33539412673879443" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/layout/traits_view_holder.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/nicol/Desktop/bot/FGO/Mobile/app/src/main/res/menu/main_menu.xml" value="0.2203125" />
       </map>

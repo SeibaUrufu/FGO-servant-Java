@@ -28,6 +28,10 @@ import com.example.fgoressource.VolleyRequestQueue;
 import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class NAServantDetailled extends AppCompatActivity {
 
@@ -78,6 +82,11 @@ public class NAServantDetailled extends AppCompatActivity {
         asc2 = (Button) findViewById(R.id.asc2);
         asc3 = (Button) findViewById(R.id.asc3);
         asc4 = (Button) findViewById(R.id.asc4);
+
+        JSONObject skill_1 = new JSONObject();
+        JSONObject skill_2 = new JSONObject();
+        JSONObject skill_3 = new JSONObject();
+        JSONObject skills = new JSONObject();
 
         Bundle servant = getIntent().getExtras();
         _id = servant.getString("ID");
@@ -159,12 +168,47 @@ public class NAServantDetailled extends AppCompatActivity {
                 });
 
 
+                int _counter;
+                skills.put("id", servMLD.getInt("collectionNo"));
+                List<Integer> skill_1Index = new ArrayList<>();
+                List<Integer> skill_2Index = new ArrayList<>();
+                List<Integer> skill_3Index = new ArrayList<>();
+                int counter1 = 0;
+                int counter2 = 0;
+                int counter3 = 0;
+                for(_counter = 0; _counter < servMLD.getJSONArray("skills").length(); _counter++) {
+                    if(servMLD.getJSONArray("skills").getJSONObject(_counter).getInt("num") == 1) {
+                        skill_1Index.add(_counter);
+                        counter1++;
+                    } else if(servMLD.getJSONArray("skills").getJSONObject(_counter).getInt("num") == 2) {
+                        skill_2Index.add(_counter);
+                        counter2++;
+                    } else if(servMLD.getJSONArray("skills").getJSONObject(_counter).getInt("num") == 3) {
+                        skill_3Index.add(_counter);
+                        counter3++;
+                    }
+                }
+                skill_1.put("number", counter1);
+                skill_1.put("index", skill_1Index);
+                skills.put("skill1", skill_1);
+
+                skill_2.put("number", counter2);
+                skill_2.put("index", skill_2Index);
+                skills.put("skill2", skill_2);
+
+                skill_3.put("number", counter3);
+                skill_3.put("index", skill_3Index);
+                skills.put("skill3", skill_3);
+
+                Log.d("Skills", String.valueOf(skills));
+
+
                 tabLayout.setupWithViewPager(viewPager);
                 vpAdapter.addFragment(new FragmentTraits(servMLD.getJSONArray("traits")), "Traits");
-                vpAdapter.addFragment(new FragmentSkills(), "Skills");
+                vpAdapter.addFragment(new FragmentSkills(servMLD.getJSONArray("skills")), "Skills");
                 vpAdapter.addFragment(new FragmentPassive(servMLD.getJSONArray("classPassive")), "Passive skills");
                 vpAdapter.addFragment(new FragmentNP(), "NP");
-                vpAdapter.addFragment(new FragmentCards(), "Cards");
+                vpAdapter.addFragment(new FragmentCards(servMLD.getJSONArray("cards"), servMLD.getJSONObject("hitsDistribution")), "Cards");
                 viewPager.setAdapter(vpAdapter);
 
             } catch (JSONException e) {
